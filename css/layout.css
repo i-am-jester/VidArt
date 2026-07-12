@@ -92,7 +92,6 @@ header {
     width: 100%;
     position: relative;
     z-index: 1;
-    overflow-x: hidden;
 }
 
 /* Snap Scrolling Configuration */
@@ -104,7 +103,6 @@ html {
 .left-stream {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
 }
 
 /* Each section is a slide */
@@ -215,6 +213,11 @@ html {
 @media (max-width: 1199px) {
     html {
         scroll-snap-type: none; /* Disable magnetic scroll on mobile */
+    }
+
+    .main-container,
+    .left-stream {
+        overflow-x: hidden;
     }
 
     .left-stream {

@@ -258,6 +258,7 @@
 .portfolio-block {
     text-align: center;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .slider-viewport {

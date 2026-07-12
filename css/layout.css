@@ -1,0 +1,241 @@
+/* --- Background Canvas --- */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(1px);
+    opacity: 0.6;
+}
+
+/* --- Scroll Progress --- */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: linear-gradient(90deg, #00A3E0, #FF007F, #FF6B35);
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.5), 0 0 20px rgba(0, 163, 224, 0.5);
+    transition: width 0.1s ease;
+}
+
+/* --- Header --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+
+.logo span {
+    color: #FF3B30;
+}
+
+.btn-contact {
+    background: #000000;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    box-shadow:
+        2px 0px 10px rgba(0, 163, 224, 0.6),
+        4px 0px 15px rgba(255, 0, 127, 0.4),
+        8px 0px 20px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-contact:hover {
+    background: #FFFFFF;
+    color: #000000;
+    border-color: #000000;
+    transform: translateY(-2px);
+}
+
+/* --- Main Layout Grid --- */
+.main-container {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Snap Scrolling Configuration */
+html {
+    scroll-snap-type: y mandatory;
+}
+
+/* Left Content Stream */
+.left-stream {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Each section is a slide */
+.left-stream > section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: center;
+    padding: 40px 0;
+    align-items: center;
+}
+
+/* Right Stage */
+.right-fixed-stage {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 41.66vw;
+    height: 100vh;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.camera-scene {
+    position: relative;
+    width: 33vw;
+    height: 33vw;
+    max-width: 550px;
+    max-height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.camera-bg-splash {
+    position: absolute;
+    width: 160%;
+    height: 160%;
+    background:
+        linear-gradient(135deg, rgba(255, 107, 53, 0.3) 0%, transparent 60%),
+        linear-gradient(-135deg, rgba(0, 163, 224, 0.3) 0%, transparent 60%),
+        linear-gradient(45deg, rgba(255, 0, 127, 0.25) 0%, transparent 60%);
+    filter: blur(35px);
+    transform: rotate(-12deg);
+    z-index: 1;
+    border-radius: 30%;
+}
+
+#camera-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 30px 70px rgba(0, 0, 0, 0.15));
+    will-change: transform, filter;
+}
+
+.camera-scene img.device-image {
+    width: 100%;
+    height: auto;
+    will-change: transform, opacity;
+}
+
+#device-mac,
+#device-phone,
+#device-about,
+#device-portfolio {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* --- Footer --- */
+.site-footer {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 25px 5%;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    scroll-snap-align: end;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+}
+
+.footer-content strong {
+    color: #111;
+    font-weight: 900;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 1199px) {
+    html {
+        scroll-snap-type: none; /* Disable magnetic scroll on mobile */
+    }
+
+    .left-stream {
+        padding: 200px 20px 80px 20px;
+        gap: 150px; /* Large gaps between blocks on mobile */
+    }
+
+    .left-stream > section {
+        min-height: auto;
+        scroll-snap-align: none;
+        padding: 0;
+        width: 100%; /* Ensure section is full width */
+    }
+}
+
+@media (max-width: 768px) {
+    .left-stream {
+        gap: 120px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}

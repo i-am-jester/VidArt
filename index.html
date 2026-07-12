@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Optimization -->
+    <title>VIDART - Photo & Video Storyteller</title>
+    <meta name="description"
+        content="VIDART provides high-end photography, cinematic video production, custom sound design, and motion effects to build an immersive experience around your brand.">
+    <meta name="keywords"
+        content="photography, video production, cinematic video, drone shooting, color grading, creative direction, reels, shorts, Canada">
+    <meta name="author" content="Anasta Vidart">
+    <link rel="canonical" href="https://vidart.com/">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="VIDART - Photo & Video Storyteller">
+    <meta property="og:description"
+        content="VIDART provides high-end photography, cinematic video production, custom sound design, and motion effects to build an immersive experience around your brand.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vidart.com/">
+    <meta property="og:image" content="https://vidart.com/images/camera.png">
+    <!-- GSAP for smooth scroll animation -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/blocks.css">
+    <script src="js/loader.js"></script>
+</head>
+
+<body style="overflow: hidden;">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-v">V</div>
+            <div class="preloader-dot-container">
+                <div class="preloader-dot">
+                    <img src="images/icon/camera.svg" class="preloader-icon" alt="camera">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Particles -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div id="scroll-progress"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">VIDART<span>.</span></div>
+        <a href="#" class="btn-contact magnetic">Contact</a>
+    </header>
+
+    <div class="main-container container-fluid px-3 px-xl-5">
+        <div class="row m-0 w-100">
+
+            <!-- LEFT COLUMN (Content Stream) -->
+            <div class="left-stream col-12 col-xl-7">
+
+                <!-- Hero Section -->
+                <section class="hero-block">
+                    <h1>VIDART<span>.</span></h1>
+                    <div class="subtitle">Anasta Vidart <span class="subtitle-gray">// Canadian Photo & Video
+                            Storyteller</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn-session magnetic">Book Your Session</a>
+                        <a href="#portfolio" class="btn-showreel magnetic">Play Showreel</a>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section class="about-block text-center position-relative">
+                    <div class="about-spotlight"></div>
+                    <h2>ABOUT THE ARTIST</h2>
+                    <div class="about-quote-wrapper">
+                        <p class="about-description">
+                            I create <span class="gradient-text">unique visual identities</span> for individuals and
+                            businesses. By blending high-end photography, cinematic video, custom sound design, and
+                            motion effects, I don't just capture moments — I build an <span
+                                class="gradient-text">immersive experience</span> around your brand. Let’s transform
+                            your ideas into compelling visual content that resonates with your audience and elevates
+                            your presence.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Services Section -->
+                <section class="services-block">
+                    <h2>SERVICES</h2>
+
+                    <!-- Large blurred background elements for glass effect -->
+                    <div class="neon-glow" style="width:250px; height:250px; background:#00A3E0; top:0; left:5%;"></div>
+                    <div class="neon-glow"
+                        style="width:300px; height:300px; background:#FF6B35; bottom:-30px; right:0%;">
+                    </div>
+                    <div class="neon-glow" style="width:200px; height:200px; background:#FF007F; top:40%; left:35%;">
+                    </div>
+
+                    <div class="services-bento-grid">
+                        <div class="service-bento-card">
+                            <div class="service-icon"><img src="images/icon/camera.svg" alt="Photography"></div>
+                            <h3>Photography</h3>
+                            <p>Professional photo sessions tailored to your brand or personal aesthetic. From portraits
+                                to commercial shoots with high-end retouching.</p>
+                        </div>
+                        <div class="service-bento-card">
+                            <div class="service-icon"><img src="images/icon/phone.svg" alt="Reels & Shorts"></div>
+                            <h3>Reels & Shorts</h3>
+                            <p>Dynamic, trendy short-form video content designed for high engagement on Instagram and
+                                TikTok. Fast-paced editing and trending audio.</p>
+                        </div>
+                        <div class="service-bento-card">
+                            <div class="service-icon"><img src="images/icon/video.svg" alt="Video Production"></div>
+                            <h3>Video Production</h3>
+                            <p>I provide full-cycle video production, bringing your brand videos and social media clips
+                                to life from the initial shoot to the final edit.</p>
+                        </div>
+                        <div class="service-bento-card">
+                            <div class="service-icon"><img src="images/icon/clipboard.svg" alt="Creative Direction">
+                            </div>
+                            <h3>Creative Direction</h3>
+                            <p>Comprehensive creative guidance. We help develop unique concepts, visual styles, and an
+                                overall artistic vision for you, your brand, or your campaigns.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Portfolio Preview Section (Interactive 3D Coverflow Slider) -->
+                <section class="portfolio-block" id="portfolio">
+                    <h2>PORTFOLIO PREVIEW</h2>
+                    <div class="slider-viewport">
+                        <div class="slider-track" id="slider-track">
+                            <!-- High-quality Unsplash images for aesthetics -->
+                            <div class="slide-card"
+                                style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400')">
+                                <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline></video>
+                                <div class="play-overlay">▶</div>
+                            </div>
+                            <div class="slide-card"
+                                style="background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400')">
+                                <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline></video>
+                                <div class="play-overlay">▶</div>
+                            </div>
+
+                            <!-- Central slide with video player -->
+                            <div class="slide-card"
+                                style="background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=400')">
+                                <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline></video>
+                                <div class="play-overlay">▶</div>
+                            </div>
+
+                            <div class="slide-card"
+                                style="background-image: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=400')">
+                                <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline></video>
+                                <div class="play-overlay">▶</div>
+                            </div>
+                            <div class="slide-card"
+                                style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400')">
+                                <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline></video>
+                                <div class="play-overlay">▶</div>
+                            </div>
+
+                            <!-- Extra cards to create the long infinity tail -->
+                            <div class="slide-card"
+                                style="background-image: url('https://images.unsplash.com/photo-1505672678657-cc7037095e60?q=80&w=400')">
+                                <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline></video>
+                                <div class="play-overlay">▶</div>
+                            </div>
+                            <div class="slide-card"
+                                style="background-image: url('https://images.unsplash.com/photo-1521714161819-15534968fc5f?q=80&w=400')">
+                                <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline></video>
+                                <div class="play-overlay">▶</div>
+                            </div>
+                            <div class="slide-card"
+                                style="background-image: url('https://images.unsplash.com/photo-1517404215738-15263e9f9178?q=80&w=400')">
+                                <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline></video>
+                                <div class="play-overlay">▶</div>
+                            </div>
+                            <div class="slide-card"
+                                style="background-image: url('https://images.unsplash.com/photo-1521714161819-15534968fc5f?q=80&w=400')">
+                                <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline></video>
+                                <div class="play-overlay">▶</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Let's Create Section -->
+                <section class="lets-create-block">
+                    <!-- Glowing backgrounds -->
+                    <div class="glow-bg-1"></div>
+                    <div class="glow-bg-2"></div>
+
+                    <h2>LET'S CREATE</h2>
+                    <p>Reach out to bring your vision to life</p>
+                    <div class="social-row">
+                        <a href="mailto:example@vidart.com" class="social-circle email magnetic">
+                            <img src="images/icon/email.svg" alt="Email">
+                        </a>
+                        <a href="#" class="social-circle instagram magnetic" target="_blank" rel="noopener noreferrer">
+                            <img src="images/icon/instagram.svg" alt="Instagram">
+                        </a>
+                        <a href="#" class="social-circle facebook magnetic" target="_blank" rel="noopener noreferrer">
+                            <img src="images/icon/facebook.svg" alt="Facebook">
+                        </a>
+                    </div>
+                </section>
+
+
+            </div>
+
+            <!-- RIGHT FIXED STAGE (Hidden on mobile) -->
+            <div class="right-fixed-stage col-xl-5 d-none d-xl-flex">
+                <div class="camera-scene">
+                    <div class="camera-bg-splash" id="bg-splash"></div>
+                    <div id="camera-wrapper">
+                        <img src="images/slides/camera.png" class="device-image" id="device-camera" alt="Vidart Camera">
+                        <img src="images/slides/about.png" class="device-image" id="device-about" alt="Vidart About">
+                        <img src="images/slides/mac.png" class="device-image" id="device-mac" alt="Vidart Macbook">
+                        <img src="images/slides/portfolio.png?v=3" class="device-image" id="device-portfolio" alt="Vidart Portfolio">
+                        <img src="images/slides/iphone.png" class="device-image" id="device-phone" alt="Vidart Phone">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span>© <span id="current-year">2024</span> VIDART. All rights reserved.</span>
+            <span>Powered by <a href="https://github.com/i-am-jester" target="_blank" rel="noopener noreferrer"
+                    style="color: inherit; text-decoration: none; transition: opacity 0.3s;"
+                    onmouseover="this.style.opacity=0.7"
+                    onmouseout="this.style.opacity=1"><strong>Jester</strong></a></span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/slider.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/background.js"></script>
+</body>
+
+</html>

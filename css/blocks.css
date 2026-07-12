@@ -1,0 +1,540 @@
+/* --- 1. Hero Block --- */
+.hero-block {
+    text-align: center;
+}
+
+.hero-block h1 {
+    font-size: 170px;
+    font-weight: 900;
+    letter-spacing: -6px;
+    line-height: 0.95;
+    margin-bottom: 25px;
+    text-shadow:
+        2px 0px 10px rgba(0, 163, 224, 0.6),
+        4px 0px 15px rgba(255, 0, 127, 0.4),
+        8px 0px 20px rgba(255, 107, 53, 0.3)
+}
+
+.hero-block h1 span {
+    color: #FF3B30;
+}
+
+.hero-block .subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #111111;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.hero-block .subtitle .subtitle-gray {
+    color: #999999;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn-session, .btn-showreel {
+    display: inline-block;
+    padding: 22px 40px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-session {
+    background: #000000;
+    color: #FFFFFF;
+    border: 2px solid transparent;
+    box-shadow:
+        2px 0px 10px rgba(0, 163, 224, 0.6),
+        4px 0px 15px rgba(255, 0, 127, 0.4),
+        8px 0px 20px rgba(255, 107, 53, 0.3);
+}
+
+.btn-showreel {
+    background: transparent;
+    color: #000000;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.btn-session:hover {
+    background: #FFFFFF;
+    color: #000000;
+    border-color: #000000;
+    transform: translateY(-3px);
+}
+
+.btn-showreel:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-3px);
+}
+
+/* --- 2. About The Artist --- */
+.about-block {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.about-spotlight {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 163, 224, 0.15) 0%, rgba(255, 0, 127, 0.08) 40%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(80px);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.about-quote-wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.about-quote-wrapper::before,
+.about-quote-wrapper::after {
+    position: absolute;
+    font-size: 150px;
+    font-weight: 900;
+    font-family: Georgia, serif;
+    line-height: 1;
+    background: linear-gradient(135deg, #00A3E0, #FF007F);
+    background-clip: text;
+    color: transparent;
+    opacity: 0.3;
+}
+
+.about-quote-wrapper::before {
+    content: "“";
+    top: -60px;
+    left: -40px;
+}
+
+.about-quote-wrapper::after {
+    content: "”";
+    bottom: -100px;
+    right: -40px;
+}
+
+.about-description {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #111;
+    position: relative;
+    z-index: 2;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #FF007F, #FF6B35);
+    background-clip: text;
+    color: transparent;
+}
+
+/* Common Headings */
+.about-block h2,
+.services-block h2,
+.portfolio-block h2,
+.lets-create-block h2 {
+    font-size: 64px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: #111;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+/* --- 3. Services Block --- */
+.services-block {
+    text-align: center;
+    position: relative;
+}
+
+.neon-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Bento Grid Styles */
+.services-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+    max-width: 1024px;
+}
+
+.service-bento-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 30px 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 0 15px rgba(255, 255, 255, 0.6);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.service-bento-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: background 0.4s ease;
+}
+
+.service-bento-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+}
+
+.service-bento-card:hover::before {
+    background: linear-gradient(135deg, #00A3E0 0%, #FF3B30 60%, #FF6B35 100%);
+}
+
+.service-bento-card .service-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.service-bento-card .service-icon img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.service-bento-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #111;
+    letter-spacing: -0.5px;
+}
+
+.service-bento-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* --- 4. Portfolio Interactive Coverflow Slider --- */
+.portfolio-block {
+    text-align: center;
+    width: 100%;
+}
+
+.slider-viewport {
+    width: 100%;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    perspective: 1000px;
+}
+
+.slider-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.slide-card {
+    position: absolute;
+    width: 260px;
+    height: 460px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), z-index 0.5s;
+    box-shadow: 0px 7px 14px rgba(0, 163, 224, 0.3);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.slide-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 3px;
+    background: linear-gradient(135deg, #00A3E0 0%, #FF3B30 60%, #FF6B35 100%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.slide-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.slide-card.playing video {
+    opacity: 1;
+}
+
+.slide-card.playing .play-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.slide-card .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 46px;
+    height: 46px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    color: #111;
+}
+
+/* --- 5. Let's Create --- */
+.lets-create-block {
+    text-align: center;
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    position: relative;
+    padding: 40px 0;
+}
+
+.lets-create-block .glow-bg-1,
+.lets-create-block .glow-bg-2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.4;
+    animation: pulseGlow 4s infinite alternate;
+}
+
+.lets-create-block .glow-bg-1 {
+    width: 250px;
+    height: 250px;
+    background: #00A3E0;
+    top: -50px;
+    left: 15%;
+}
+
+.lets-create-block .glow-bg-2 {
+    width: 300px;
+    height: 300px;
+    background: #FF007F;
+    bottom: -50px;
+    right: 15%;
+    animation-delay: -2s;
+}
+
+.lets-create-block p {
+    font-size: 18px;
+    color: #444;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.social-row {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.social-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    box-shadow: 2px 0px 10px rgba(0, 163, 224, 0.6), 4px 0px 15px rgba(255, 0, 127, 0.4), 8px 0px 20px rgba(255, 107, 53, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: background 0.4s ease;
+}
+
+.social-circle img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.social-circle:hover {
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+}
+
+.social-circle:hover::before {
+    background: linear-gradient(135deg, #00A3E0 0%, #FF3B30 60%, #FF6B35 100%);
+}
+
+.social-circle:hover img {
+    transform: scale(1.15);
+}
+
+/* --- Mobile Responsiveness for Blocks --- */
+@media (max-width: 1199px) {
+
+    .services-bento-grid,
+    .portfolio-block,
+    .lets-create-block {
+        width: 100%;
+    }
+
+    .hero-block h1 {
+        font-size: 100px;
+        letter-spacing: -3px;
+    }
+}
+
+@media (max-width: 900px) {
+    .services-bento-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-block h1 {
+        font-size: 75px;
+        letter-spacing: -2px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .btn-session, .btn-showreel {
+        padding: 18px 20px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .about-block h2,
+    .services-block h2,
+    .portfolio-block h2,
+    .lets-create-block h2 {
+        font-size: 42px;
+    }
+
+    .about-description {
+        font-size: 22px;
+    }
+
+    .about-quote-wrapper::before,
+    .about-quote-wrapper::after {
+        font-size: 100px;
+    }
+
+    .about-quote-wrapper::before {
+        top: -40px;
+        left: -10px;
+    }
+
+    .about-quote-wrapper::after {
+        bottom: -60px;
+        right: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-block h1 {
+        font-size: 55px;
+        /* For screens 320-480px */
+        letter-spacing: -1px;
+    }
+
+    .hero-block .subtitle {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .btn-session {
+        padding: 15px 30px;
+        font-size: 14px;
+    }
+
+    .about-block h2,
+    .services-block h2,
+    .portfolio-block h2,
+    .lets-create-block h2 {
+        font-size: 32px;
+    }
+
+    .about-description {
+        font-size: 18px;
+    }
+}
